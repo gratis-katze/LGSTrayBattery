@@ -87,7 +87,9 @@ namespace LGSTrayUI
         {
             InitializeComponent();
 
-            if (!appSettings.UI.EnableRichToolTips)
+            if (appSettings.UI.EnableRichToolTips)
+                taskbarIcon.ToolTipText = null;
+            else
                 taskbarIcon.TrayToolTip = null;
 
             AddRef();
